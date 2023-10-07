@@ -14,7 +14,7 @@ public class Main {
         if (salario < 1000){
             var novoSalario = salario * 1.1f;
 
-            // sout = snipet
+            // sout = snipet para printar algo na tela
             System.out.println(novoSalario);
         }else {
             System.out.println("Salário dentro da faixa.");

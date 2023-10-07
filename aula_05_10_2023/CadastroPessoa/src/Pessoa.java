@@ -1,5 +1,5 @@
 public class Pessoa {
-    private String nome;
+    public String nome;
     public float rendimento;
 
     public Endereco endereco;
