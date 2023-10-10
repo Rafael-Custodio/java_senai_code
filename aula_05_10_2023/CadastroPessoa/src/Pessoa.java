@@ -6,6 +6,9 @@ public class Pessoa {
 
     public float CalcularImposto(float rendimento){
         return rendimento;
+    }
 
+    public float CalcularImpostoJuridica(float rendimento){
+        return rendimento;
     }
 }
