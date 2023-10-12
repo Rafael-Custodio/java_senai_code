@@ -22,8 +22,9 @@ public class Main {
         int opcao;
 
         do {
-            System.out.println(" ");
             System.out.println("Escolha uma opção:\n 1 = Cadastrar Livro(s).\n 2 = Listar Livro(s).\n 0 = Sair.");
+            System.out.println();
+            System.out.print("Opção: ");
             opcao = scannNumero.nextInt();
 
 
@@ -43,16 +44,17 @@ public class Main {
 
                     novoLivro.autor = novoAutor;
 
-                    System.out.println("Digite o Preço do Livro (somente números, sem caracteres especiais): ");
+                    System.out.println("Digite o Preço do Livro (formato: R$ xx,xx): ");
                     novoLivro.preco = scannFloat.nextFloat();
 
-                    System.out.println("Digite a Data de Lançamento do livro (dd/MM/yyyy): ");
+                    System.out.println("Digite a Data de Lançamento do livro (formato: dd/MM/yyyy): ");
                     LocalDate date = LocalDate.parse(scannTxt.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
                     Period periodo = Period.between(date, LocalDate.now());
 
                     novoLivro.dataLancamento = date;
 
                     if (periodo.getYears() >= 5){
+                        System.out.println();
                         System.out.println("==========================================================================");
                         System.out.println("==========================================================================");
                         System.out.println();
@@ -75,7 +77,6 @@ public class Main {
 
                     System.out.println();
                     System.out.println("Cadastro realizado com sucesso.");
-                    System.out.println();
 
                     break;
 
@@ -89,7 +90,12 @@ public class Main {
                             System.out.println("Título: " + cadaLivro.titulo);
                             System.out.println("Autor: " + cadaLivro.autor.nome);
                             System.out.println("Local de Nascimento do Autor: " + cadaLivro.autor.localNasc);
-                            System.out.println("Preço: R$ " + cadaLivro.preco);
+
+                            //Formatando para string, para formatar 2 casas decimais após a virgula e também mostra a vírgula ao invés de ponto
+                            System.out.println("Preço do livro: " + String.format("%.2f", cadaLivro.preco));
+
+                            //Tipo float, na saída/print, troca a vírgula por ponto e come o último zero (exemplo: 1,50 = 1.5)
+                            //System.out.println("Preço: R$ " + cadaLivro.preco);
                             System.out.println("Data de Lançamento: " + cadaLivro.dataLancamento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
                             System.out.println();
                             System.out.println("==========================================================================");
