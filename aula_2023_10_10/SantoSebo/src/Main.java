@@ -12,14 +12,13 @@ public class Main {
         System.out.println(" ");
 
         ArrayList<Livro> listaLivros = new ArrayList<>();
-        Livro metrodoLivro = new Livro();
 
         // sout = snipet para printar algo na tela
         System.out.println("Bem vindo ao sistema de cadastro de Livros do Santo Sebo.");
 
         Scanner scannNumero = new Scanner(System.in);
         Scanner scannTxt = new Scanner(System.in);
-        Scanner scannDouble = new Scanner(System.in);
+        Scanner scannFloat = new Scanner(System.in);
         int opcao;
 
         do {
@@ -45,7 +44,7 @@ public class Main {
                     novoLivro.autor = novoAutor;
 
                     System.out.println("Digite o Preço do Livro (somente números, sem caracteres especiais): ");
-                    novoLivro.preco = scannDouble.nextFloat();
+                    novoLivro.preco = scannFloat.nextFloat();
 
                     System.out.println("Digite a Data de Lançamento do livro (dd/MM/yyyy): ");
                     LocalDate date = LocalDate.parse(scannTxt.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
